@@ -18,18 +18,9 @@ class Solution {
         if(root==null){
             return null;
         }
+        else if(root.val==val){return root;}
+        else if(root.val>val){return searchBST(root.left,val);}
+        else{return searchBST(root.right,val);}
         
-        if(root.val==val){
-            return root;
-        }
-        else{
-            TreeNode left = searchBST(root.left,val);
-            if(left!=null){
-                return left;
-            }
-            else{
-                return searchBST(root.right,val);
-            }
-        }
     }
 }
